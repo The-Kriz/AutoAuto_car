@@ -63,3 +63,15 @@ while True :
     # #data_string = msg
 
     data_string = bytearray(axis)
+
+
+ #   print(f'Sending {msg} to {ip}:{port}')
+    print(f'Sending data string {data_string} to {ip}:{port}')
+    sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    sock.connect((ip, port))
+    sock.send(data_string)
+    # sock.sendto(arr (ip, port))
+    time.sleep(0.2)
+ #   print (msg)
+
+
