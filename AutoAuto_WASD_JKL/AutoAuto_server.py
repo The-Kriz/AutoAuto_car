@@ -3,7 +3,7 @@ import time
 import socket
 from keyboard import is_pressed
 
-ip = "192.168.1.193"
+ip = "192.168.137.240"
 port = 8089
 msg = b" "
 while True :
@@ -25,9 +25,9 @@ while True :
     except:
         break
         
-print(f'Sending {msg} to {ip}:{port}')
+    print(f'Sending {msg} to {ip}:{port}')
 
-sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-sock.sendto(msg, (ip, port))
-time.sleep(0.2)
-msg = b' '
+    sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    sock.sendto(msg, (ip, port))
+    time.sleep(0.2)
+    msg = b' '
